@@ -8,6 +8,8 @@ const MainComponent = () => {
     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
   }, []);
 
+  const fibNumber = useMemo(() => fib(userNumber), [userNumber, fib]);
+
   useEffect(() => {
     console.log("Here!");
   }, []);
@@ -21,7 +23,7 @@ const MainComponent = () => {
         placeholder="Position"
         onChange={(e) => setUserNumber(e.target.value)}
       />
-      <p>Number:</p>
+      <p>Number: {fibNumber || "--"}</p>
       <br />
       <br />
       <label>Input:</label>
