@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
+import s from "./MainComponent.module.css";
 
 const MainComponent = () => {
   const [userNumber, setUserNumber] = useState("");
@@ -18,6 +19,7 @@ const MainComponent = () => {
     <div>
       <label>Fibonacci Sequence:</label>
       <input
+        className={s.inp}
         type="number"
         value={userNumber}
         placeholder="Position"
@@ -28,6 +30,7 @@ const MainComponent = () => {
       <br />
       <label>Input:</label>
       <input
+        className={s.inp}
         type="text"
         value={input}
         placeholder="Input"
